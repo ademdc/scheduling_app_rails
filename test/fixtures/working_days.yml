@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  arrival: 2018-09-17 15:00:29
+  break_start: 2018-09-17 15:00:29
+  break_end: 2018-09-17 15:00:29
+  departure: 2018-09-17 15:00:29
+
+two:
+  user_id: 1
+  arrival: 2018-09-17 15:00:29
+  break_start: 2018-09-17 15:00:29
+  break_end: 2018-09-17 15:00:29
+  departure: 2018-09-17 15:00:29

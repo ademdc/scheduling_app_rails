@@ -1,0 +1,17 @@
+<% if can? :manage, :all or current_user.id===@user.id%>
+<div class='container'>
+	<div class="jumbotron">
+		<h1> User <%= @user.id %> </h1>
+		<h3><%= @user.name %></h3>
+		<%= link_to 'Back', :back %>
+	</div>
+
+<%= button_to 'Generate', nil, class: "show btn btn-danger", id: "show", method: :get, remote: true %>
+<br></br>
+<hr>
+<div id="calendar"></div>
+</div>
+<% else %>
+<p>Access denied! You are not admin! </p>
+<%= link_to 'Back', :back %>
+<%end%>

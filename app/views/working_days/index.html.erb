@@ -1,0 +1,40 @@
+<% if can? :manage, :all %>
+<p id="notice"><%= notice %></p>
+
+<h1>Working Days</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Arrival</th>
+      <th>Break start</th>
+      <th>Break end</th>
+      <th>Departure</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @working_days.each do |working_day| %>
+      <tr>
+        <td><%= working_day.user_id %></td>
+        <td><%= working_day.arrival %></td>
+        <td><%= working_day.break_start %></td>
+        <td><%= working_day.break_end %></td>
+        <td><%= working_day.departure %></td>
+        <td><%= link_to 'Show', working_day %></td>
+        <td><%= link_to 'Edit', edit_working_day_path(working_day) %></td>
+        <td><%= link_to 'Destroy', working_day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Working Day', new_working_day_path %>
+
+<% else %>
+<% controller.redirect_to dashboard_path %>
+<% end %>
