@@ -6,10 +6,22 @@
 		<%= link_to 'Back', :back %>
 	</div>
 
-<%= button_to 'Generate', nil, class: "show btn btn-danger", id: "show", method: :get, remote: true %>
-<br></br>
-<hr>
-<div id="calendar"></div>
+
+
+	<div id="ex1" class="modal">
+		<input type="text" id="picker" class="daterange"/>
+		<%= button_to 'Generate new', nil, rel:'modal:close', class: "btn btn-primary", id: "generate", method: :get, remote: true%>
+		<hr>
+		<a class='btn btn-danger' href="#" rel="modal:close">Close</a>
+	</div>
+	<br>
+	<!-- Link to open the modal -->
+	<a href="#ex1" class='btn btn-primary' rel="modal:open">Pick date</a>
+
+	<br></br>
+	<hr>
+	<div id="calendar2"></div>
+	<div id="calendar"></div>
 </div>
 <% else %>
 <p>Access denied! You are not admin! </p>

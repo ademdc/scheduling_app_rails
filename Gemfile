@@ -41,6 +41,8 @@ gem 'momentjs-rails'
 
 gem 'fullcalendar-rails'
 
+gem 'bootstrap-daterangepicker-rails'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

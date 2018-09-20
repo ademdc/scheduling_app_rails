@@ -12,6 +12,7 @@
 
 //= require jquery
 //= require moment 
+//= require daterangepicker
 //= require fullcalendar
 //= require fullcalendar/locale-all
 //= require fullcalendar/gcal
