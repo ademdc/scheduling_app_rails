@@ -1,8 +1,6 @@
 <div class="container">
 
 	<% if user_signed_in? %>
-
-
 	<div class="jumbotron">
 		<h1 class="display-4">Welcome <%= current_user.email %></h1>
 		<%= link_to('Edit registration', edit_user_registration_path, class:"btn btn-primary") %>
@@ -41,8 +39,9 @@
 	    <% @users.each do |user| %>
 	      <tr>
 	        <td><%= user.name %></td>
-	        <td><%= link_to 'Show', "user/"+user.id.to_s %></td>
-	        <td><%= link_to 'Edit', 'users/edit' %></td>
+	        <td><%= link_to 'Show', users_path %></td>
+	        <td><%= link_to 'Schedule', user_schedule_path(user) %></td>
+	        <td><%= link_to 'Edit', edit_user_registration_path+'/'+user.id.to_s %></td>
 	        <td><%= link_to 'Destroy', 'user', method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	      </tr>
 	    <% end %>

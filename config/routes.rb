@@ -1,23 +1,22 @@
 Rails.application.routes.draw do
 
+  root to: "dashboard#index"
 
   resources :working_days
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "home#index"
+  resources :dashboard, only:[:index]
 
-  get 'dashboard' => "dashboard#index"
 
-  get 'user' => "schedule#index"
-  get 'user/:id' => "schedule#show"
-  get 'user_working/:id' => "schedule#render_schedule"
-
-  # get 'users' => "users/listing#index"
-
+  get 'users/schedule/:id' => "schedules#render_schedule"
 
   devise_for :users, controllers: {
       sessions: 'users/sessions',
       passwords: 'users/passwords',
       registrations: 'users/registrations',
   }
+
+  resources :users do
+    resource :schedule, only: [:create, :show]
+  end
+
 
 end

@@ -5,9 +5,6 @@
 		<h3><%= @user.name %></h3>
 		<%= link_to 'Back', :back %>
 	</div>
-
-
-
 	<div id="ex1" class="modal">
 		<input type="text" id="picker" class="daterange"/>
 		<%= button_to 'Generate new', nil, rel:'modal:close', class: "btn btn-primary", id: "generate", method: :get, remote: true%>
@@ -21,7 +18,8 @@
 	<br></br>
 	<hr>
 	<div id="calendar2"></div>
-	<div id="calendar"></div>
+	<div id="calendar" data-schedule-path="<%= user_schedule_path(@user) %>"></div>
+	<p id='demo'></p>
 </div>
 <% else %>
 <p>Access denied! You are not admin! </p>
